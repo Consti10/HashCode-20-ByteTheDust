@@ -11,7 +11,6 @@ public class OutputDataSet {
 
     public int N_LIBS;
 
-
     //first int is id, second int how many books
     //third to nth int: books
     public final ArrayList<Schedule> xxx=new ArrayList<>();

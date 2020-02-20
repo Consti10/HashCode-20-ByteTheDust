@@ -22,6 +22,7 @@ public class InputDataSet {
 
     public final ArrayList<Library> libraries=new ArrayList<>();
 
+
     //All members should be immutable (it makes no sense to alter the input data set)
     //since they are immutable, make them public and avoid getters / setters
     //Construct a Input data set java instance from the provided filename
@@ -43,7 +44,7 @@ public class InputDataSet {
             }
 
             for(int i=0;i<N_LIBRARIES;i++){
-                Library library=new Library();
+                Library library=new Library(i);
                 final String line1=br.readLine();
                 final String[] line1Data=line1.split(" ");
                 library.N_BOOKS=Integer.parseInt(line1Data[0]);
@@ -54,7 +55,7 @@ public class InputDataSet {
                 final String line2=br.readLine();
                 final String[] line2Data=line2.split(" ");
                 for(int y=0;y<line2Data.length;y++){
-                    final int value=Integer.parseInt(line2Data[i]);
+                    final int value=Integer.parseInt(line2Data[y]);
                     library.books.add(value);
                 }
                 libraries.add(library);
@@ -76,18 +77,7 @@ public class InputDataSet {
         return builder.toString();
     }
 
-    //Stupid shit :)
-    public OutputDataSet createSolution(){
-        OutputDataSet outputDataSet=new OutputDataSet();
-        outputDataSet.N_LIBS=1;
 
-        Schedule schedule=new Schedule();
-        schedule.id=0;
-        schedule.N_BOOKS_FOR_SCANNING=0;
-        outputDataSet.xxx.add(schedule);
-
-        return outputDataSet;
-    }
 
 
 }
