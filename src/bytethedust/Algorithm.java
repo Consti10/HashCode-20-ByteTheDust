@@ -11,7 +11,13 @@ import java.util.Set;
 public class Algorithm {
 
     public static HashSet<Integer> alreadyScanned = new HashSet<Integer>();
+    private List<Library> libraries;
+    private int N_DAYS_FOR_SCANNING;
 
+    public Algorithm(List<Library> libraries, int N_DAYS_FOR_SCANNING) {
+        this.libraries = libraries;
+        this.N_DAYS_FOR_SCANNING = N_DAYS_FOR_SCANNING;
+    }
 
     /*bekommt eine Liste von Libraries,
     arbeitet alle libraries sequenziell ab und berechnet den score.
@@ -74,11 +80,11 @@ public class Algorithm {
         return score;
     }
 
-
-
-
-
-
-
-
+    boolean sumOfSignupTimes_biggerThanDeadline(List<Library> list) {
+        int a = 0;
+        for (Library lib: list) {
+            a += lib.SIGNUP_TIME;
+        }
+        return a > N_DAYS_FOR_SCANNING;
+    }
 }
