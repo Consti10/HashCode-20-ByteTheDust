@@ -84,9 +84,11 @@ public class Algorithm {
     public List<Library> mapping(List<Integer> list) {
         List<Library> libraries2 = new ArrayList<>();
         for (int i = 0; i < list.size(); i++) {
+//            libraries.get(list.get(i)).ID = list.get(i);
             libraries2.add(libraries.get(list.get(i)));
         }
-        return  libraries2;
+
+        return libraries2;
     }
 
     public boolean sumOfSignupTimes_biggerThanDeadline(List<Library> list) {
@@ -95,5 +97,20 @@ public class Algorithm {
             a += lib.SIGNUP_TIME;
         }
         return a > N_DAYS_FOR_SCANNING;
+    }
+
+    public List<Schedule> generateSchedulers(List<Integer> ints) {
+        List<Schedule> schedules = new ArrayList<>();
+        for (int i = 0; i < ints.size(); i++) {
+            Library lib = libraries.get(ints.get(i));
+            Schedule schedule = new Schedule();
+            schedule.N_BOOKS_FOR_SCANNING = lib.N_BOOKS;
+            schedule.sendBooks = lib.books;
+            schedule.id = ints.get(i);
+
+            schedules.add(schedule);
+        }
+
+        return schedules;
     }
 }
