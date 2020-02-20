@@ -18,20 +18,22 @@ public class Library {
     
     public void map( HashSet<Integer> x) {
         List<Integer> result = new ArrayList<>();
+        List<Integer> newBooks = new ArrayList<>();
         for (int i = 0; i < books.size(); i++) {
             if (x.contains(score.get(books.get(i)))) {
                 continue;
             }
+            newBooks.add(books.get(i));
             result.add(score.get(books.get(i)));
         }
 
 
         result = result.stream().sorted().collect(Collectors.toList());
 
-        for (int i = 0; i < books.size(); i = i + SHIPPED_BOOKS_PER_DAY) {
+        for (int i = 0; i < newBooks.size(); i = i + SHIPPED_BOOKS_PER_DAY) {
             List<Integer> list = new ArrayList<>();
-            if (i + SHIPPED_BOOKS_PER_DAY > books.size()) {
-                for (int j = i; j < books.size(); j++) {
+            if (i + SHIPPED_BOOKS_PER_DAY > newBooks.size()) {
+                for (int j = i; j < newBooks.size(); j++) {
                     list.add(result.get(j));
                 }
                 score_per_book.add(list);
@@ -42,5 +44,19 @@ public class Library {
             }
             score_per_book.push(list);
         }
+    }
+
+    public static void main(String[] args) {
+        List<Integer> list = List.of(0, 1, 2, 3, 4);
+        List<Integer> scores = List.of(1, 2, 3, 6, 5, 4);
+        Library library = new Library();
+        library.books = list;
+        library.score = scores;
+        library.SHIPPED_BOOKS_PER_DAY = 1;
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1);
+        library.map(set);
+        System.out.println(library.score_per_book);
+
     }
 }
