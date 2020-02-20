@@ -8,8 +8,6 @@ import java.util.Set;
 //Only Input is the InputDataSet
 //return OutputDataSet
 
-
-
 public class Algorithm {
 
     public static HashSet<Integer> alreadyScanned = new HashSet<Integer>();
