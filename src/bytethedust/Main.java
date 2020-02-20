@@ -14,7 +14,7 @@ public class Main {
             //System.out.println(inputDataset.toString());
 
            final OutputDataSet outputDataSet=Algorithm.generateSimpleStupidSolution(inputDataset);
-           outputDataSet.writeToFile(ASSETS_DIRECTORY+"solution2.txt");
+           outputDataSet.writeToFile(ASSETS_DIRECTORY+"solution.txt");
 
         } catch (IOException e) {
             e.printStackTrace();
