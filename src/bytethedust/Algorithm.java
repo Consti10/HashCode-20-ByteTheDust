@@ -13,17 +13,18 @@ public class Algorithm {
     public static HashSet<Integer> alreadyScanned = new HashSet<Integer>();
     private List<Library> libraries;
     private int N_DAYS_FOR_SCANNING;
+    public int maxTime;
 
     public Algorithm(List<Library> libraries, int N_DAYS_FOR_SCANNING) {
         this.libraries = libraries;
-        this.N_DAYS_FOR_SCANNING = N_DAYS_FOR_SCANNING;
+        this.maxTime = N_DAYS_FOR_SCANNING;
     }
 
     /*bekommt eine Liste von Libraries,
     arbeitet alle libraries sequenziell ab und berechnet den score.
     gibt einen int-Score zurück.
      */
-    public int calculateScore(List<Library> ls, int maxTime){
+    public int calculateScore(List<Library> ls){
 
         //der berechnete Score der Abfolge;
         int score = 0;
