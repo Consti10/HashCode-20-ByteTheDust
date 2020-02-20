@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 
 //TODO: modify this file for the real problem
 
@@ -14,7 +15,7 @@ public class OutputDataSet {
 
     //first int is id, second int how many books
     //third to nth int: books
-    public final ArrayList<Schedule> xxx=new ArrayList<>();
+    public List<Schedule> xxx=new ArrayList<>();
 
     //Write the output data set into a file
     //Input filename: filename, use absolute path

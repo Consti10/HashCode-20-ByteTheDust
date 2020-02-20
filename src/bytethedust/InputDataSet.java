@@ -54,7 +54,7 @@ public class InputDataSet {
                 final String line2=br.readLine();
                 final String[] line2Data=line2.split(" ");
                 for(int y=0;y<line2Data.length;y++){
-                    final int value=Integer.parseInt(line2Data[i]);
+                    final int value=Integer.parseInt(line2Data[y]);
                     library.books.add(value);
                 }
                 libraries.add(library);
