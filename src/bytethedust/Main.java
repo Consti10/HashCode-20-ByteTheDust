@@ -10,11 +10,11 @@ public class Main {
     public static void main(String[] args) {
 
         try {
-            final InputDataSet inputDataset = new InputDataSet(ASSETS_DIRECTORY+"a_example.in");
+            final InputDataSet inputDataset = new InputDataSet(ASSETS_DIRECTORY+"a_example.txt");
             //System.out.println(inputDataset.toString());
 
-           final OutputDataSet outputDataSet=Algorithm.generateSimpleStupidSolution(inputDataset);
-           outputDataSet.writeToFile(ASSETS_DIRECTORY+"solution.txt");
+           //final OutputDataSet outputDataSet=Algorithm.generateSimpleStupidSolution(inputDataset);
+           //outputDataSet.writeToFile(ASSETS_DIRECTORY+"solution.txt");
 
         } catch (IOException e) {
             e.printStackTrace();
