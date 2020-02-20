@@ -13,14 +13,16 @@ import java.util.List;
 //TODO modify this file for the real problem
 
 @SuppressWarnings("WeakerAccess")
-public class InputDataset {
+public class InputDataSet {
+
     //All members should be immutable (it makes no sense to alter the input data set)
-    final int maxSlices;
-    final int nPizzas;
+    //since they are immutable, make them public and avoid getters / setters
+    public final int maxSlices;
+    public final int nPizzas;
     final ArrayList<Integer> pizzas=new ArrayList<>();
 
     //Construct a Input data set java instance from the provided filename
-    InputDataset(final String filename) throws IOException {
+    InputDataSet(final String filename) throws IOException {
         try(BufferedReader br = new BufferedReader(new FileReader(filename))) {
             final String firstLine=br.readLine();
             assert firstLine != null;

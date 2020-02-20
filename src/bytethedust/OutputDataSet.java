@@ -8,12 +8,19 @@ import java.util.ArrayList;
 //TODO: modify this file for the real problem
 
 
-public class OutputDataset {
+public class OutputDataSet {
 
-    //Write the output dataset data into file
+    public final int nTypes;
+    public final ArrayList<Integer> pizzaTypes;
+
+    public OutputDataSet(final int nTypes, final ArrayList<Integer> pizzaTypes){
+        this.nTypes=nTypes;
+        this.pizzaTypes=pizzaTypes;
+    }
+
+    //Write the output data set into a file
     //Input filename: filename, use absolute path
-
-    public static void writeToFile(final String filename, final int nTypes, final ArrayList<Integer> pizzaTypes){
+    public void writeToFile(final String filename){
         StringBuilder builder=new StringBuilder();
         builder.append(nTypes).append("\n");
         for(final int val:pizzaTypes){
