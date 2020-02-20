@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static final String ASSETS_DIRECTORY="C:\\Users\\geier\\Desktop\\HashCode\\HashCode-20-ByteTheDust\\assets\\";
+    //hi consti
+
+    public static final String ASSETS_DIRECTORY="C:\\Users\\lh\\IdeaProjects\\HashCode-20-ByteTheDust\\assets\\";
 
     public static void main(String[] args) {
 
