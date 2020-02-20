@@ -50,6 +50,7 @@ public class InputDataSet {
                 library.N_BOOKS=Integer.parseInt(line1Data[0]);
                 library.SIGNUP_TIME=Integer.parseInt(line1Data[1]);
                 library.SHIPPED_BOOKS_PER_DAY=Integer.parseInt(line1Data[2]);
+                library.score = scoresForBooks;
 
                 final String line2=br.readLine();
                 final String[] line2Data=line2.split(" ");

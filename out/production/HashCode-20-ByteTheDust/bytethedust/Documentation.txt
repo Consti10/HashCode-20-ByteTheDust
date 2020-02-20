@@ -1,0 +1,23 @@
+//The basic layout of the hashcode problem is always the same:
+//1) multiple input data sets, provided as .txt btw. .in files
+//2) Implement algorithm that finds solution
+//3) Submit solution as .txt file
+
+class InputDataSet:
+construct a problem data instance from filename
+
+class OutputDataSet:
+write the output data set into a file that can be uploaded to the judge system
+
+
+Guidelines:
+Try using primitive java data types (Array, ArrayList, ..) as much as possible to avoid dependencies (e.g. instead of declaring own classes)
+Example bad:
+class Pizza{
+    final int slices;
+}
+doStuff(ArrayList<Pizza> pizzen);
+Example good:
+doStuff(arrayList<int> slices);
+
+
