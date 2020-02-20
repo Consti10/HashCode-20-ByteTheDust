@@ -12,6 +12,10 @@ public class Library {
     List<Integer> score = new ArrayList<>();
     Stack<List<Integer>> score_per_book = new Stack<>();
 
+    public void sort_books() {
+        books = books.stream().sorted(Comparator.comparing(Integer::intValue).reversed()).collect(Collectors.toList());
+    }
+    
     public void map( HashSet<Integer> x) {
         List<Integer> result = new ArrayList<>();
         for (int i = 0; i < books.size(); i++) {

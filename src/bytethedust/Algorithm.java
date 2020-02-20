@@ -81,6 +81,14 @@ public class Algorithm {
         return score;
     }
 
+    public List<Library> mapping(List<Integer> list) {
+        List<Library> libraries2 = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            libraries2.add(libraries.get(list.get(i)));
+        }
+        return  libraries2;
+    }
+
     public boolean sumOfSignupTimes_biggerThanDeadline(List<Library> list) {
         int a = 0;
         for (Library lib: list) {
