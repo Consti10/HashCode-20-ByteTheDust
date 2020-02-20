@@ -26,11 +26,13 @@ public class OutputDataSet {
             builder.append(x.N_BOOKS_FOR_SCANNING).append(" ");
             builder.append("\n");
 
+            System.out.println("LOL");
+
             for(int i=0;i<x.sendBooks.size();i++){
                 builder.append(x.sendBooks.get(i)).append(" ");
             }
+            builder.append("\n");
         }
-
         try {
             Files.write(Paths.get(filename),builder.toString().getBytes());
         } catch (IOException e) {

@@ -23,7 +23,7 @@ public class Main {
                 //System.out.println(inputDataset.toString());
 
                 //easiest submission: no lib for scanning
-                final OutputDataSet outputDataSet=SimpleAlgorithm.createSolution(inputDataset);
+                final OutputDataSet outputDataSet=SimpleAlgorithm.createSolutionX(inputDataset);
 
                 outputDataSet.writeToFile(ASSETS_DIRECTORY+"output\\"+filename+"_solution.txt");
 

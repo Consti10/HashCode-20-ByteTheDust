@@ -34,8 +34,9 @@ public class SimpleAlgorithm {
     //public static OutputDataSet createSolution2(final InputDataSet input){
     //}
 
-    public OutputDataSet createSolution(final InputDataSet input){
+    public static OutputDataSet createSolutionX(final InputDataSet input){
         final OutputDataSet output=new OutputDataSet();
+        output.N_LIBS=0;
 
         int timeLeft=input.N_DAYS_FOR_SCANNING;
 
@@ -45,14 +46,18 @@ public class SimpleAlgorithm {
                 output.N_LIBS++;
                 Schedule schedule=new Schedule();
                 schedule.id=library.ID;
-                schedule.N_BOOKS_FOR_SCANNING=1;
-                schedule.sendBooks.add(0);
+                //schedule.N_BOOKS_FOR_SCANNING=1;
+                //schedule.sendBooks.add(library.books.get(0));
+                schedule.N_BOOKS_FOR_SCANNING=library.N_BOOKS;
+                for(Integer i:library.books){
+                    schedule.sendBooks.add(i);
+                }
+
                 output.xxx.add(schedule);
             }
         }
-        //return 
+        return output;
     }
-
 
 
     //Returns a list of indices to all libraries that can be started until signup time is over
