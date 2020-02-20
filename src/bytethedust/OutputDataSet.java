@@ -11,14 +11,10 @@ public class OutputDataSet {
 
     public int N_LIBS;
 
-    class XXX{
-        public int id;
-        public int N_BOOKS_FOR_SCANNING;
-        public ArrayList<Integer> sendBooks=new ArrayList<>();
-    }
+
     //first int is id, second int how many books
     //third to nth int: books
-    public final ArrayList<XXX> xxx=new ArrayList<>();
+    public final ArrayList<Schedule> xxx=new ArrayList<>();
 
     //Write the output data set into a file
     //Input filename: filename, use absolute path
@@ -26,7 +22,7 @@ public class OutputDataSet {
         StringBuilder builder=new StringBuilder();
         builder.append(N_LIBS).append("\n");
 
-        for(XXX x : xxx){
+        for(Schedule x : xxx){
             builder.append(x.id).append(" ");
             builder.append(x.N_BOOKS_FOR_SCANNING).append(" ");
             builder.append("\n");

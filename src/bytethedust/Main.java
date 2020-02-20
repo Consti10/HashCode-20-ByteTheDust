@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-    //hi consti
-
     public static final String ASSETS_DIRECTORY="C:\\Users\\geier\\Desktop\\HashCode\\HashCode-20-ByteTheDust\\assets\\";
 
     public static void main(String[] args) {
@@ -16,8 +14,7 @@ public class Main {
             //System.out.println(inputDataset.toString());
 
             //easiest submission: no lib for scanning
-            final OutputDataSet outputDataSet=new OutputDataSet();
-            outputDataSet.N_LIBS=0;
+            final OutputDataSet outputDataSet=inputDataset.createSolution();
 
             outputDataSet.writeToFile(ASSETS_DIRECTORY+"solution.txt");
 

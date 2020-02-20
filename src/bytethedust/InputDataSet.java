@@ -22,13 +22,6 @@ public class InputDataSet {
 
     public final ArrayList<Library> libraries=new ArrayList<>();
 
-    public class Library{
-        int N_BOOKS;
-        int SIGNUP_TIME;
-        int SHIPPED_BOOKS_PER_DAY;
-        ArrayList<Integer> books=new ArrayList<>();
-    }
-
     //All members should be immutable (it makes no sense to alter the input data set)
     //since they are immutable, make them public and avoid getters / setters
 
@@ -59,7 +52,7 @@ public class InputDataSet {
                 library.SHIPPED_BOOKS_PER_DAY=Integer.parseInt(line1Data[2]);
 
                 final String line2=br.readLine();
-                final String[] line2Data=line1.split(" ");
+                final String[] line2Data=line2.split(" ");
                 for(int y=0;y<line2Data.length;y++){
                     final int value=Integer.parseInt(line2Data[i]);
                     library.books.add(value);
@@ -81,8 +74,17 @@ public class InputDataSet {
         return builder.toString();
     }
 
-    public void createSolution(){
-        //
+    //Stupid shit :)
+    public OutputDataSet createSolution(){
+        OutputDataSet outputDataSet=new OutputDataSet();
+        outputDataSet.N_LIBS=1;
+
+        Schedule schedule=new Schedule();
+        schedule.id=0;
+        schedule.N_BOOKS_FOR_SCANNING=0;
+        outputDataSet.xxx.add(schedule);
+
+        return outputDataSet;
     }
 
 
