@@ -23,7 +23,7 @@ public class Algorithm {
     arbeitet alle libraries sequenziell ab und berechnet den score.
     gibt einen int-Score zurück.
      */
-    private int calculateScore(List<Library> ls, int maxTime){
+    public int calculateScore(List<Library> ls, int maxTime){
 
         //der berechnete Score der Abfolge;
         int score = 0;
