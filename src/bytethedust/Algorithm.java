@@ -81,7 +81,7 @@ public class Algorithm {
         return score;
     }
 
-    boolean sumOfSignupTimes_biggerThanDeadline(List<Library> list) {
+    public boolean sumOfSignupTimes_biggerThanDeadline(List<Library> list) {
         int a = 0;
         for (Library lib: list) {
             a += lib.SIGNUP_TIME;
