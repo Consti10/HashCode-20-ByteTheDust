@@ -7,10 +7,10 @@ import java.util.List;
 
 public class MainMCTS {
 
-    public static final String ASSETS_DIRECTORY="D:\\Privat\\programming\\googleHashcode\\HashCode-20-ByteTheDust\\assets\\";
+    public static final String ASSETS_DIRECTORY="C:\\Users\\lh\\IdeaProjects\\HashCode-20-ByteTheDust\\assets\\";
 
     public static final String[] filenames={
-            "a_example", "b_read_on","c_incunabula","d_tough_choices","e_so_many_books","f_libraries_of_the_world"
+            "b_read_on","c_incunabula","d_tough_choices","e_so_many_books","f_libraries_of_the_world","a_example",
     };
 
     public static void main(String[] args) {

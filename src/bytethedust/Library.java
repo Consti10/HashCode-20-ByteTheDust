@@ -34,6 +34,7 @@ public class Library {
             List<Integer> list = new ArrayList<>();
             if (i + SHIPPED_BOOKS_PER_DAY > newBooks.size()) {
                 for (int j = i; j < newBooks.size(); j++) {
+                    System.out.println("resultSize: " + result.size() + ", index: " + j);
                     list.add(result.get(j));
                 }
                 score_per_book.add(list);

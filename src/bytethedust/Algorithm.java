@@ -1,8 +1,5 @@
 package bytethedust;
-import java.util.HashSet;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Set;
+import java.util.*;
 
 //Algorithms are all the same:
 //Only Input is the InputDataSet
@@ -26,6 +23,8 @@ public class Algorithm {
      */
     public int calculateScore(List<Library> ls){
 
+        System.out.println("Alg aufgerufen mit #lib: " + ls.size() );
+
         //der berechnete Score der Abfolge;
         int score = 0;
         //Gibt an, wie viel Zeit noch übrig ist
@@ -35,7 +34,8 @@ public class Algorithm {
         List<Library> scanning = new ArrayList<>();
 
         //arbeite sequenziell alle Libraries ab
-        for(int i =0; i< ls.size(); i++){
+        for(Library library: ls){
+            System.out.println("Time remaining: " + timeRemaining);
 
             //brich ab, wenn die Zeit abgelaufen ist.
             if (timeRemaining == 0){
@@ -45,39 +45,38 @@ public class Algorithm {
             //wenn die Anmeldung gerade frei ist, melde eine Library an
             if (daysOccupied == 0){
                 //melde am nächsten Tag die nächste Lib an
-                scanning.add(ls.get(i));
-                i++;
+                scanning.add(library);
+                daysOccupied = library.SIGNUP_TIME;
             }
 
-            //iteriere alle derzeit aktiven Librarys und "hole von jeder eine Lieferung"
-            for (int x = 0; x < scanning.size(); x++) {
-                Library lib = scanning.get(x);
-                //ordne den Stack der Library so, wie wir ihn brauchen
-                scanning.get(x).map(alreadyScanned);
-                List<Integer> shipment = lib.score_per_book.pop();
+            //iteriere alle derzeit aktiven Librarys und "hole von jeder eine Lieferung an Büchern"
+            for (Library aktiv: scanning) {
+                System.out.println("Score computed: " + score);
+
+
+                //bestimme, die günstigste nächste Bücherlieferung
+                aktiv.map(alreadyScanned);
+                List<Integer> shipment = Collections.emptyList();
+                if(!(aktiv.score_per_book.isEmpty())) {
+                    shipment = aktiv.score_per_book.pop();
+                }
 
                 int temp_score = 0;
-                //iteriere alle Bücher der letzten Lieferung
-                for(int z = 0; z < shipment.size(); z++){
-                    if ( !alreadyScanned.contains(shipment.get(z))){
-                                temp_score = temp_score + shipment.get(z);
-                                alreadyScanned.add(shipment.get(z));
+                //iteriere alle Bücher der aktuellen letzten Lieferung
+                for(int lieferungBuch: shipment){
+                    if ( !alreadyScanned.contains(lieferungBuch)){
+                                temp_score = temp_score + lieferungBuch;
+                                alreadyScanned.add(lieferungBuch);
                     }
                 }
                 //addiere die berechneten Scores der Lieferung zum gesamtScore
                 score = score + temp_score;
-
-                //wenn der Stack nach den oben genannten operationen leer ist, entferne die Library
-                if (lib.score_per_book.isEmpty()){
-                    scanning.remove(lib);
-                    x--;
-                }
             }
-
+            System.out.println("Loop verlassen, Zeit dekrementiert");
             timeRemaining--;
             daysOccupied--;
         }
-
+        System.out.println("Score computed: " + score);
         return score;
     }
 

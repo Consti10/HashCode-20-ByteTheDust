@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static final String ASSETS_DIRECTORY="C:\\Users\\geier\\Desktop\\HashCode\\HashCode-20-ByteTheDust\\assets\\";
+    public static final String ASSETS_DIRECTORY="C:\\Users\\lh\\IdeaProjects\\HashCode-20-ByteTheDust\\assets\\";
 
     public static final String[] filenames={
-            "a_example", "b_read_on","c_incunabula","d_tough_choices","e_so_many_books","f_libraries_of_the_world"
+           "b_read_on", "a_example", "c_incunabula","d_tough_choices","e_so_many_books","f_libraries_of_the_world"
     };
 
     public static void main(String[] args) {
@@ -21,6 +21,8 @@ public class Main {
 
                 final InputDataSet inputDataset = new InputDataSet(path);
                 //System.out.println(inputDataset.toString());
+
+
 
                 //easiest submission: no lib for scanning
                 final OutputDataSet outputDataSet=inputDataset.createSolution();
